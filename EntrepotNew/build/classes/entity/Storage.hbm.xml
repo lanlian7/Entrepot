@@ -1,0 +1,38 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">  
+
+<hibernate-mapping package="com.baidu.cfghbm">  
+  
+   <class name="entity.Storage" table="Storage">  
+    
+       <id name="id" type="java.lang.Long">
+           <generator class="native" />  
+       </id>
+       <property name="storageID" type="java.lang.String"></property>
+       
+       <property name="Warehouse_Date" type="java.sql.Date"></property>
+       
+        <property name="Supplier" type="java.lang.String"></property>  
+        
+       <property name="Material_Number" type="java.lang.String"></property>  
+        
+       <property name="Name" type="java.lang.String"></property>  
+        
+       <property name="Specifications" type="java.lang.String"></property>      
+             
+        <property name="Number" type="java.lang.Long"></property>    
+          
+        <property name="Unit" type="java.lang.String"></property>  
+        
+        <property name="UnitPrice" type="double"></property>
+        
+       <property name="Amount_money" type="double"></property>
+        
+       
+       <property name="WarehousePerson" type="java.lang.String"></property>
+       
+       <property name="Position_selection" type="java.lang.String"></property>
+  </class>  
+     
+</hibernate-mapping>  

@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">  
+<hibernate-mapping package="entity">  
+  
+   <class name="entity.Users" table="USERS">  
+    
+       <id name="id" type="java.lang.Long">  
+        <column name="id"/>  
+           <generator class="native" />  
+       </id>  
+          
+       <property name="username" type="java.lang.String">  
+        </property>  
+       <property name="password" type="java.lang.String">   
+        </property>           
+      
+        
+  </class>  
+     
+</hibernate-mapping>  

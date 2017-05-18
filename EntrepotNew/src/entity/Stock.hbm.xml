@@ -1,0 +1,29 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">  
+
+<hibernate-mapping package="com.baidu.cfghbm">  
+  
+   <class name="entity.Stock" table="Stock">  
+    
+       <id name="id" type="java.lang.Long">
+           <generator class="native" />  
+       </id>  
+       
+       
+       <property name="Material_Number" type="java.lang.String"></property>  
+       
+       <property name="Name" type="java.lang.String"></property>
+ 
+       <property name="Specification" type="java.lang.String"></property>
+       
+       <property name="number" type="java.lang.Long"></property>
+       
+       <property name="Unit" type="java.lang.String"></property>
+       
+       <property name="UnitPrice" type="double"></property>
+       
+       <property name="AmountMoney" type="double"></property>
+  </class>  
+     
+</hibernate-mapping>  

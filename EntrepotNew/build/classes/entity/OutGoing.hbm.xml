@@ -1,0 +1,35 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">  
+
+<hibernate-mapping package="com.baidu.cfghbm">  
+  
+   <class name="entity.OutGoing" table="OutGoing">  
+    
+       <id name="id" type="java.lang.Long">
+           <generator class="native" />  
+       </id>  
+     
+       <property name="OutGoingID" type="java.lang.String"></property>
+       
+       <property name="OutDate" type="java.sql.Date"></property>
+       
+       <property name="Material_Number" type="java.lang.String"></property>
+       
+       <property name="Name" type="java.lang.String"></property>
+       
+       <property name="Specification" type="java.lang.String"></property>
+       
+       <property name="Number" type="java.lang.Long"></property>
+
+       <property name="Unit" type="java.lang.String"></property>
+ 
+       <property name="Purpose" type="java.lang.String"></property>
+       
+       <property name="Material_Department" type="java.lang.String"></property>
+       
+       <property name="Material_Person" type="java.lang.String"></property>
+       
+       </class>  
+     
+</hibernate-mapping>  

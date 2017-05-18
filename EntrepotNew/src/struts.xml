@@ -1,0 +1,123 @@
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+          "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+
+
+
+	<package name="default" namespace="/" extends="struts-default"></package>
+	<package name="users" namespace="/" extends="struts-default">
+		<action name="login" class="action.UsersAction" method="execute">
+			<result name="login_failure">Users_login.jsp</result>
+			<result name="login_success">Users_login_success.jsp</result>
+			<result name="input">Users_login.jsp</result>
+		</action>
+		<action name="loginout" class="action.UsersAction" method="loginOut">
+			<result name="logout_success">Users_login.jsp</result>
+		</action>
+	</package>
+
+	
+
+	<package name="admin" namespace="/" extends="json-default">
+
+		<action name="*_*Json" class="action.{1}Action" method="{2}">
+			<result type="json">
+				<param name="root">{2}JsonMap</param>
+			</result>
+			<allowed-methods>toAdd,add,toUpdate,update,delete,query,alert,checkStore</allowed-methods>
+		</action>
+	</package>
+
+	<package name="storage" namespace="/" extends="struts-default">
+		<action name="*_*" class="action.{1}Action" method="{2}">
+			<result name="success">/{1}/{1}_{2}.jsp</result>
+			<allowed-methods>toAdd,add,toUpdate,update,delete,query</allowed-methods>
+		</action>
+	</package>
+
+	<package name="export" namespace="/" extends="struts-default">
+		<action name="StorageReportAction_exportExcel" class="report.action.StorageReportAction"
+			method="exportExcel">
+			<result name="excel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					attachment;filename="${fileName}"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="input" type="redirect">/Storage/Storage_query.jsp
+			</result>
+		</action>
+		
+		<action name="StoreReportAction_exportExcel" class="report.action.StoreReportAction"
+			method="exportExcel">
+			<result name="excel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					attachment;filename="${fileName}"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="input" type="redirect">/Store/Store_query.jsp
+			</result>
+		</action>
+		
+		<action name="StockReportAction_exportExcel" class="report.action.StockReportAction"
+			method="exportExcel">
+			<result name="excel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					attachment;filename="${fileName}"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="input" type="redirect">/Stock/Stock_query.jsp
+			</result>
+		</action>
+		
+		<action name="OutGoingReportAction_exportExcel" class="report.action.OutGoingReportAction"
+			method="exportExcel">
+			<result name="excel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					attachment;filename="${fileName}"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="input" type="redirect">/OutGoing/OutGoing_query.jsp
+			</result>
+		</action>
+		
+		<action name="inWarehouseReportAction_exportExcel" class="report.action.inWarehouseReport"
+			method="exportExcel">
+			<result name="excel" type="stream">
+				<param name="contentType">
+					application/vnd.ms-excel
+				</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">
+					attachment;filename="${fileName}"
+				</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="input" type="redirect">Users_login_success.jsp
+			</result>
+		</action>
+	</package>
+</struts>

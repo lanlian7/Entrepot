@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"> 
+<hibernate-configuration>
+    <session-factory>
+        <!--显示执行的SQL语句-->
+        <property name="show_sql">true</property>
+        <!--连接字符串-->
+      <property name="connection.url">jdbc:mysql://127.0.0.1:3306/newentrepot?useUnicode=true&amp;characterEncoding=UTF8</property>
+        <!--连接数据库的用户名-->
+        <property name="connection.username">root</property>
+        <!--数据库用户密码-->
+        <property name="connection.password">041166</property>
+        <!--数据库驱动-->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!--JDBC连接池（使用内置的连接池）-->
+        <property name="connection.pool_size">5</property>
+        <property name="myeclipse.connection.profile">warehouse</property>
+        
+        <property name="transaction_factory_class">net.sf.hibernate.transaction.JDBCTransactionFactory</property>
+        <!--设置Hibernate自动管理上下文的策略-->
+        <property name="current_session_context_class">thread</property>
+        <!--选择使用的方言-->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!--在启动时删除并重新创建数据库-->
+        <property name="hbm2ddl.auto">update</property>
+        
+        <mapping resource="entity/Users.hbm.xml"/>
+        <mapping resource="entity/GeneralStore.hbm.xml"/>
+        <mapping resource="entity/OutGoing.hbm.xml"/>
+        <mapping resource="entity/Stock.hbm.xml"/>
+        <mapping resource="entity/Storage.hbm.xml"/>
+        
+    </session-factory>
+</hibernate-configuration>
